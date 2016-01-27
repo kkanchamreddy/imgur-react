@@ -1,5 +1,5 @@
 var React = require('react');
-var Api = require('../utils/api');
+var TopicStore = require('../stores/topic-store');
 
 module.exports = React.createClass({
   getInitialState: function() {
@@ -9,10 +9,10 @@ module.exports = React.createClass({
   },
 
   componentWillMount: function() {
-    Api.get('topics/defaults')
-      .then(function(data) {
+    TopicStore.getTopics()
+      .then(function(){
         this.setState({
-          topics: data.data
+          topics: TopicStore.topics
         })
       }.bind(this));
   },
