@@ -24,7 +24,7 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    return <div> {this.renderImages()}</div>
+    return <div className = "topic"> {this.renderImages()}</div>
   },
 
   renderImages: function(){
