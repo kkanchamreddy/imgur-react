@@ -1,5 +1,6 @@
 var React = require('react');
 var ImageStore = require('../stores/image-store');
+var ImagePreview = require('./image-preview');
 var Reflux = require('reflux');
 var Actions = require('../actions');
 
@@ -23,11 +24,13 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    return <div> </div>
-    /*  this.state.images.map(function(image){
-        return <img src={image}/>
+    return <div> {this.renderImages()}</div>
+  },
 
-      })*/
+  renderImages: function(){
+    return this.state.images.map(function(image){
+        return <ImagePreview key = {image.id} {...image}/>
+      });
   },
 
   onChange: function(event, images) {

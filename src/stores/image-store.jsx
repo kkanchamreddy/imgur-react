@@ -9,7 +9,7 @@ module.exports = Reflux.createStore({
   getImages: function(topicId){
     Api.get('topics/' + topicId)
       .then(function(json){
-        this.image = json.data;
+        this.images = json.data;
         this.triggerChange();
       }.bind(this));
   },
