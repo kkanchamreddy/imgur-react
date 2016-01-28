@@ -18,11 +18,16 @@ module.exports = React.createClass({
     Actions.getImages(this.props.params.id);
   },
 
-  render: function() {
-    return this.state.images.map(function(image){
-      return <img src={image}/>
+  componentWillReceiveProps: function(nextProps) {
+    Actions.getImages(nextProps.params.id);
+  },
 
-    })
+  render: function() {
+    return <div> </div>
+    /*  this.state.images.map(function(image){
+        return <img src={image}/>
+
+      })*/
   },
 
   onChange: function(event, images) {
