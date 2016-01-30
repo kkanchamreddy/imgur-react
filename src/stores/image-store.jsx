@@ -30,7 +30,7 @@ module.exports = Reflux.createStore({
   },
 
   find: function(id){
-    var image = _.find(this.image, {id:id});
+    var image = _.find(this.images, {id:id});
     if (image) {
       return image;
     } else {
